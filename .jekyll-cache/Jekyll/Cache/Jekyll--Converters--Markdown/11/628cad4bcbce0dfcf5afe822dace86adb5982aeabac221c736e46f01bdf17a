@@ -1,0 +1,268 @@
+I"/2<h1 id="aws">AWS</h1>
+
+<p>AWS offers cloud computing services, developments tools, and enterprise solutions that helps businesses scale and grow fast.</p>
+
+<h2 id="aws-cloud-computing-solutions">AWS cloud computing solutions:</h2>
+
+<h3 id="compute">Compute</h3>
+
+<p>EC2 - virtual machines on cloud</p>
+
+<p>AWS Lambda - serverless solutions that allow to run functions whenever you need.</p>
+
+<p>EKS - managed Kubernetes platform</p>
+
+<p>Beanstalk - automated deployment of resources for scalable web application</p>
+
+<p>VPC - private networking of cloud resources</p>
+
+<ul>
+  <li>Vnet</li>
+  <li>Subnet</li>
+  <li>CIDR</li>
+  <li>VPN</li>
+  <li>Routes</li>
+  <li>Gateway</li>
+  <li>Availability Zones</li>
+</ul>
+
+<p>CloudFormation - Infratructure as a code</p>
+
+<h3 id="storage">Storage</h3>
+
+<p>S3 - simple storage service</p>
+
+<p>EBS - block storage</p>
+
+<p>Glacier - low cost, data archiving storage technology</p>
+
+<p>Storage gateway - storage for on-premise applications</p>
+
+<h3 id="database">Database</h3>
+
+<p>Amazon RDS - easy to setup, operate, scalable relational database</p>
+
+<p>DynamoDB - NoSQL database</p>
+
+<p>ElasticCache - in-memory cache solution</p>
+
+<p>RedShift - Data warehousing solution. Offers Complex OLAP (Online Analytical Processing) features. Analyze information from multiple databases.</p>
+
+<h3 id="security">Security</h3>
+
+<p>IAM - helps manage users and groups, assign policies and rules.</p>
+
+<p>WAP - Web application Firewall</p>
+
+<p>KMS - Key Management service - helps create and control encryption keys and encrypt data.</p>
+
+<h3 id="migration">Migration</h3>
+
+<p>Snowball - allows to transfer terabytes of data inside and outside of AWS.</p>
+
+<p>SMS (Server Migration Service) -  allows to migrate on-site servers to AWS</p>
+
+<h3 id="analytics-and-big-data">Analytics and Big Data</h3>
+
+<p>Athena, CloudSearch, ElasticSearch, Kinesis, QuickSight, EMR(Elastic Map Reduce)</p>
+
+<h3 id="management-services">Management Services</h3>
+
+<p>CloudWatch - monitors AWS resources like EC2, RDS. It triggers alarm depends on various metrics.</p>
+
+<p>CloudFormation - IaaC (Infrastructure as a code) solution like Terraform but only focused on AWS</p>
+
+<p>CloudTrail - used for auditing and logging AWS resources</p>
+
+<p>OpsWorks - autoamate configurations on AWS enviroments</p>
+
+<p>Service Catalog, Config, AWS Auto Scaling, System Manager</p>
+
+<h3 id="developer-tools">Developer Tools</h3>
+
+<p>CodeStar, CodeCommit, CodeBuild, CodeDeploy, CodePipeline, Cloud9</p>
+
+<h3 id="internet-of-thing">Internet of Thing</h3>
+
+<p>IoT Core, IoT Device management, IoT Analytics, Amazon FreeRTOS</p>
+
+<h3 id="application-services-mobile-services-business-productivity-ai-ar--vr-game-development-etc">Application Services, Mobile Services, Business Productivity, AI, AR &amp; VR, Game Development, etc</h3>
+
+<h1 id="docker">Docker</h1>
+
+<p>Docker is container technology developed by Docker Inc. Docker uses linux kernel features like linux namespaces and control groups(cgroups) to create containers.</p>
+
+<p>Linux Namespaces</p>
+
+<ul>
+  <li>pid namespaces - this ensures that processes within one namespace are not aware of process in other namespaces</li>
+  <li>net namespaces - Isolation of the network interface controller, iptables, routing tables, and other lower level networking tools</li>
+  <li>mnt namespaces - Filesystems are mounted, so that the file system scope of a namespace is limited to only the directories mounted</li>
+  <li>user namespaces - Limits users within a namespace to only that namespace and avoids user ID conflicts across namespaces.</li>
+</ul>
+
+<p>CGroups</p>
+
+<p>Cgroups allow you to allocate resources — such as CPU time, system memory, network bandwidth, or combinations of these resources — among user-defined groups of tasks (processes) running on a system</p>
+
+<p>Doker compose of docker client, docker server, and docker registry.</p>
+
+<h1 id="kubernetes">Kubernetes</h1>
+
+<p>Kubernetes is a container orchestration solution. It enables automating deployments, scaling, and managing containers.</p>
+
+<h4 id="control-plane-components">Control Plane Components</h4>
+
+<p><strong>apiserver</strong> - control plane component that expose the kubernetes API</p>
+
+<p><strong>etcd</strong> - a key-value store used by kubernetes to store and backup all cluster data</p>
+
+<p><strong>kube-scheduler</strong> - watches newly created pods with no assigned node yet. Handles all scheduling conditions</p>
+
+<p><strong>kube-controller-manager</strong>  - manage all controller processes such as replication controller, node controller, endpoints controller, SA and token controller.</p>
+
+<p><strong>cloud-controller-manager</strong> - interact with the cloud provider. It is still in alpha feature. It manage controller such as node controller, route controller, service controller, and volume controller.</p>
+
+<h4 id="node-components">Node Components</h4>
+
+<p>kubelet  - agent that runs on each nodes. It make sure the containers are running in the pods.</p>
+
+<p>kube-proxy - is a network proxy that runs on each nodes in the cluster, implementing the Service object</p>
+
+<p>Container runtime - responsible for running the containers. Supports Docker, containerd, CRI-O.</p>
+
+<h4 id="addons">Addons</h4>
+
+<p>DNS - DNS server for kubernetes services.</p>
+
+<p>Kubernetes Dashboard (Web UI) - dashboard for kubernetes cluster used to monitor, manage, troubleshoot applications running in the cluster.</p>
+
+<p>Container Resource Monitoring - records generic time-series metrics about container.</p>
+
+<p>Cluster level logging - resposible for saving container logs to central logging storage.</p>
+
+<h4 id="kubernetes-objects">Kubernetes Objects</h4>
+
+<p>Pods - Basic component of Kubernetes. It can be a single container or multi-container. Pods can define volumes, get secrets or configmaps, expose ports, define serviceaccount. Pods can have its controller base on use cases which are;</p>
+
+<ul>
+  <li>ReplicaSet and ReplicationController -  maintain stable number of Pods are running to provide scalabilty, reliability and availabilty. Usually used by deployment.</li>
+  <li>Deployment - provides declarative updates for pods and replicasSet. Deployments can define to create new replicaSet. Deployments makes it easy to deploy, scale up, rollback, pause deployment of pods.</li>
+  <li>StefulSets - used to manage staful applications. It maintains sticky identity for each pods to achieve persistency. Storage must be provisioned by PersistentVolume.</li>
+  <li>DaemonSets - ensure that all nodes run a copy of a pod. It ensures to have an equal copy of pods per nodes.</li>
+  <li>Job - used to complete certain task. Job can create on or more pods based on your use cases. After a job was completed it will terminate all that pods.</li>
+  <li>Cronjob - create job on a time-based schedule. Works like crontab. Schedule are written in Cron format</li>
+</ul>
+
+<p>Service - used expose the pods as one network service.  Service identifies set of pods based on selector. Service without selector can be used for other components.</p>
+
+<ul>
+  <li>ClusterIP - expose the service in cluster-internal IP. clusterIP is only reachable within cluster</li>
+  <li>NodePort - expose the service on each node IP with static port. NodePort is reachable outside cluster by hitting <code class="language-plaintext highlighter-rouge">&lt;nodeIP&gt;:&lt;NodePort&gt;</code></li>
+  <li>LoadBalancer - expose the service externally using cloud provider’s load balancer.</li>
+  <li>ExternalName - expose the service by CNAME record. Uses Kube-dns.</li>
+</ul>
+
+<p>Endpoints - endpoints are automatically created by service to map pods IP addresses. You can define and manually create endpoints</p>
+
+<p>Ingress - expose the services outside the cluster from HTTP and HTTPS routes. Ingress can be configured the give services externally-reachable URLs, load balance traffic.</p>
+
+<p>NetworkPolicy - used to allow or deny communication to and from a group of pods and other network entities.</p>
+
+<p>Volumes - is attached to the container on the pod. Volumes ceases to exist when pods died too. There are many types of volume that can be created to pods. <code class="language-plaintext highlighter-rouge">volumeMounts</code> mounts the volume to the container.</p>
+
+<ul>
+  <li>emptyDir - just a empty directory</li>
+  <li>hostPath - use the directory path of the hosted node.</li>
+  <li>configMap - uses the configmap object as volume</li>
+  <li>secretMap - uses the secrets object as volume</li>
+  <li>persistentVolumeClaim - attach the persistent volume to the container.</li>
+  <li>cloud provided volumes - awsElasticBlockStore, azureDisk, azureFile, cephfs, glusterfs,gitRepo, vsphereVolume,etc</li>
+</ul>
+
+<p>PersistentVolume - is a piece of storage in the cluster provisioned  manually by administrators or dynamically provisioned using StorageClass.</p>
+
+<p>PersistentVolumeClaims - consumes the persistent volumes to be used by pods.</p>
+
+<p>StorageClass - provides way to describe the classes of storage.</p>
+
+<p>configMaps - used to store configurations</p>
+
+<p>Secrets - used to store and mange sensitive information</p>
+
+<h3 id="kubernetes-pattern">Kubernetes Pattern</h3>
+
+<h5 id="foundational-pattern">Foundational Pattern</h5>
+
+<p>Predictable Demands, Declarative Deployments, Health Probe, Managed Lifecycle, Automated Placement</p>
+
+<h5 id="behavioral-pattern">Behavioral Pattern</h5>
+
+<p>Batch job, periodic job, Daemon Service, Singleton Serivce, Service Discovery, Self Awareness</p>
+
+<h5 id="structural-pattern">Structural Pattern</h5>
+
+<p>Init Container, Sidecar, Adapter, Ambassador</p>
+
+<h5 id="configuration-pattern">Configuration Pattern</h5>
+
+<p>envVar Configuration, Configuration resource, immutable configuration, configuration template.</p>
+
+<h5 id="advanced-patterns">Advanced Patterns</h5>
+
+<p>Controller, Operator, Elastic Scale, Image builder</p>
+
+<h1 id="istio">Istio</h1>
+
+<p>Istio is a service mesh implementation to kubernetes. Service mesh means a network for microservices.</p>
+
+<p>Istio implements sidecar proxy that intercept all network communication between microservices.</p>
+
+<p>Istio offers traffic management, security, policies and observability for microservices.</p>
+
+<p><img src="Review Notes.assets/image-20200225173525721.png" alt="image-20200225173525721" /></p>
+
+<h4 id="istio-control-plane">Istio Control Plane</h4>
+
+<p>Pilot - Pilot provides service discovery for the Envoy sidecars, traffic management capabilities for intelligent routing (e.g., A/B tests, canary rollouts, etc.), and resiliency (timeouts, retries, circuit breakers, etc.).</p>
+
+<p>Mixer - platform-independent component that enforces access control and usage policies across the service mesh, and collects telemetry data from the Envoy proxy and other services.</p>
+
+<p>Mixer adapter - allow Istio to interface to a variety of infrastructure backends for such things as metrics and logs.</p>
+
+<p>Citadel - enables strong service-to-service and end-user authentication with built-in identity and credential management. You can use Citadel to upgrade unencrypted traffic in the service mesh.</p>
+
+<p>Galley - is Istio’s configuration validation, ingestion, processing and distribution component. It is responsible for insulating the rest of the Istio components from the details of obtaining user configuration from the underlying platform (e.g. Kubernetes)</p>
+
+<h4 id="traffic-management">Traffic Management</h4>
+
+<h5 id="istio-networking-objects">Istio Networking Objects</h5>
+
+<p>Virtualservice - lets you configure how requests are routed to a service within istio service mesh. I defines a set of traffic rules to apply when a host is addressed.</p>
+
+<p>DestinationRule - defines the policies that apply to the traffic intended for a service after routing</p>
+
+<p>Gateway - a load balancer operating at the edge of the mesh receiving incoming and outgoing connections</p>
+
+<p>ServiceEntry - Access/routes entries into the internal mesh. These entries could an external to the mesh (public API), or internal service but not part of internal mesh (VM talking to services)</p>
+
+<p>Envoy Filter - provides mechanism to customize the Envoy configuration generated by Istio Pilot.</p>
+
+<p>Sidecar - describe the configuration of sidecar proxy that mediates inbound and outbound communication</p>
+
+<h5 id="request-routing">Request Routing</h5>
+
+<h4 id="resiliency">Resiliency</h4>
+
+<p>Circuit breaking - ability to close the connection to service (total unavailibility) when certain amount of failure has occured (fast fail or retries), latency and redirect to other service</p>
+
+<p>outlier detection - ability to detect unusual behavior or failure and evict unhealthy host.</p>
+
+<p>Retries and Timeouts - ability to</p>
+
+<p>Health checks</p>
+
+<p>Fault injection</p>
+
+<h1 id="vagrant">Vagrant</h1>
+:ET
