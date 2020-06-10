@@ -1,6 +1,6 @@
 ---
 title: CKAD Preparation Guide
-author: Harrold Lechug
+author: Harrold Lechuga
 date: 2019-08-08 11:33:00 +0800
 categories: ["", Blogs]
 tags: [kubernetes]
