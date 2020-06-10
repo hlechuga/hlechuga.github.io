@@ -1,10 +1,9 @@
 ---
 title: Review Notes
-author: Cotes Chung
-date: 2019-08-08 11:33:00 +0800
+author: Harrold Lechuga
+date: 2019-12-26
 categories: ["", Blogs]
-tags: [typography]
-math: true
+tags: [notes]
 ---
 
 # AWS

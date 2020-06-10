@@ -8,6 +8,7 @@ WORK_DIR=$(dirname $(dirname $(realpath "$0")))
 
 
 update_files() {
+  bash _scripts/create_posts.sh
   bash _scripts/create_pages.sh
 
   find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf
