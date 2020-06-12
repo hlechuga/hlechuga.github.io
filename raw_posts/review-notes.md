@@ -149,7 +149,10 @@ Cluster level logging - resposible for saving container logs to central logging 
 
 #### Kubernetes Objects
 
-Pods - Basic component of Kubernetes. It can be a single container or multi-container. Pods can define volumes, get secrets or configmaps, expose ports, define serviceaccount. Pods can have its controller base on use cases which are;
+##### Worloads
+
+- Pods - Basic component of Kubernetes. It can be a single container or multi-container. Pods can define volumes, get secrets or configmaps, expose ports, define serviceaccount. Pods can have its controller base on use cases which are;
+
 
 - ReplicaSet and ReplicationController -  maintain stable number of Pods are running to provide scalabilty, reliability and availabilty. Usually used by deployment.
 - Deployment - provides declarative updates for pods and replicasSet. Deployments can define to create new replicaSet. Deployments makes it easy to deploy, scale up, rollback, pause deployment of pods. 
@@ -158,18 +161,22 @@ Pods - Basic component of Kubernetes. It can be a single container or multi-cont
 - Job - used to complete certain task. Job can create on or more pods based on your use cases. After a job was completed it will terminate all that pods. 
 - Cronjob - create job on a time-based schedule. Works like crontab. Schedule are written in Cron format
 
-Service - used expose the pods as one network service.  Service identifies set of pods based on selector. Service without selector can be used for other components. 
+##### Discovery and  Load Balancing
 
-- ClusterIP - expose the service in cluster-internal IP. clusterIP is only reachable within cluster
-- NodePort - expose the service on each node IP with static port. NodePort is reachable outside cluster by hitting `<nodeIP>:<NodePort>`
-- LoadBalancer - expose the service externally using cloud provider's load balancer.
-- ExternalName - expose the service by CNAME record. Uses Kube-dns. 
+- Service - used expose the pods as one network service.  Service identifies set of pods based on selector. Service without selector can be used for other components. 
+  - ClusterIP - expose the service in cluster-internal IP. clusterIP is only reachable within cluster
+  - NodePort - expose the service on each node IP with static port. NodePort is reachable outside cluster by hitting `<nodeIP>:<NodePort>`
+  - LoadBalancer - expose the service externally using cloud provider's load balancer.
+  - ExternalName - expose the service by CNAME record. Uses Kube-dns. 
 
-Endpoints - endpoints are automatically created by service to map pods IP addresses. You can define and manually create endpoints
+- Endpoints - endpoints are automatically created by service to map pods IP addresses. You can define and manually create endpoints
 
-Ingress - expose the services outside the cluster from HTTP and HTTPS routes. Ingress can be configured the give services externally-reachable URLs, load balance traffic.
+- Ingress - expose the services outside the cluster from HTTP and HTTPS routes. Ingress can be configured the give services externally-reachable URLs, load balance traffic.
 
-NetworkPolicy - used to allow or deny communication to and from a group of pods and other network entities. 
+- NetworkPolicy - used to allow or deny communication to and from a group of pods and other network entities. 
+
+
+##### Storage and Config store
 
 Volumes - is attached to the container on the pod. Volumes ceases to exist when pods died too. There are many types of volume that can be created to pods. `volumeMounts` mounts the volume to the container.
 
@@ -178,7 +185,7 @@ Volumes - is attached to the container on the pod. Volumes ceases to exist when 
 - configMap - uses the configmap object as volume
 - secretMap - uses the secrets object as volume
 - persistentVolumeClaim - attach the persistent volume to the container. 
-- cloud provided volumes - awsElasticBlockStore, azureDisk, azureFile, cephfs, glusterfs,gitRepo, vsphereVolume,etc
+- vendor-provided volumes - awsElasticBlockStore, azureDisk, azureFile, cephfs, glusterfs,gitRepo, vsphereVolume,etc
 
 PersistentVolume - is a piece of storage in the cluster provisioned  manually by administrators or dynamically provisioned using StorageClass.
 

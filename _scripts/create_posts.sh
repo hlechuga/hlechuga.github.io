@@ -21,6 +21,10 @@ read_date() {
   echo "$_yaml" | grep "^date:" | awk '{print $2}' 
 }
 
+read_title() {
+  local _yaml=$(_read_yaml $1)
+  echo "$_yaml" | grep "^title:" | sed 's/"//g'| awk '{for (i=2; i<NF; i++) printf tolower($i) "-"; print tolower($NF)}'
+}
 
 init() {
   if [[ -d _posts ]]; then
@@ -44,9 +48,10 @@ main() {
   for _file in $(ls "raw_posts")
   do
     local _path="raw_posts/$_file"
+    local _title=$(read_title "$_path")
     local _date=$(read_date "$_path")
 
-    cp raw_posts/$_file _posts/$_date-$_file
+    cp raw_posts/$_file _posts/$_date-$_title.md
   done
 }
 

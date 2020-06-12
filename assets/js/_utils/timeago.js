@@ -9,41 +9,11 @@
 $(function() {
 
   function timeago(date, isLastmod) {
-    var now = new Date();
     var past = new Date(date);
-    var seconds = Math.floor((now - past) / 1000);
 
-    var year = Math.floor(seconds / 31536000);
-    if (year >= 1) {
-      return year + " year" + (year > 1 ? "s" : "") + " ago";
-    }
-
-    var month = Math.floor(seconds / 2592000);
-    if (month >= 1) {
-      return month + " month" + (month > 1 ? "s" : "") + " ago";
-    }
-
-    var week = Math.floor(seconds / 604800);
-    if (week >= 1) {
-      return week + " week" + (week > 1 ? "s" : "") + " ago";
-    }
-
-    var day = Math.floor(seconds / 86400);
-    if (day >= 1) {
-      return day + " day" + (day > 1 ? "s" : "") + " ago";
-    }
-
-    var hour = Math.floor(seconds / 3600);
-    if (hour >= 1) {
-      return hour + " hour" + (hour > 1 ? "s" : "") + " ago";
-    }
-
-    var minute = Math.floor(seconds / 60);
-    if (minute >= 1) {
-      return minute + " minute" + (minute > 1 ? "s" : "") + " ago";
-    }
-
-    return (isLastmod? "just" : "Just") + " now";
+    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    let formatted_date =  months[past.getMonth()] + " " + past.getDate() + " " + past.getFullYear();
+    return formatted_date;
   }
 
 

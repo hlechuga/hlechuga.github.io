@@ -238,16 +238,19 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
     }
     .fab {
       &.fa-twitter {
-        @include btn-sharing-color(rgba(29, 161, 242, 1.00));
+        color: rgba(29, 161, 242, 1.00);
       }
       &.fa-facebook-square {
-        @include btn-sharing-color(rgb(66, 95, 156));
+        color: rgb(66, 95, 156);
       }
       &.fa-telegram {
-        @include btn-sharing-color(rgb(39, 159, 217));
+        color: #0073b1;
       }
       &.fa-weibo {
-        @include btn-sharing-color(rgb(229, 20, 43));
+        color: rgb(229, 20, 43);
+      }
+      &.fa-linkedin {
+        color: rgb(39, 159, 217);
       }
     }
 

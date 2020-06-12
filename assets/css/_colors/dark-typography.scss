@@ -20,7 +20,7 @@
   /* common color */
   --text-color: #e9ecef;
   --text-muted-color: rgb(107, 116, 124);
-  --link-color: rgb(138, 180, 248);
+  --link-color: #ffb000;
   --link-underline-color: rgb(82, 108, 150);
   --main-border-color: rgb(44, 45, 45);
   --button-bg: rgb(39, 40, 43);
@@ -86,7 +86,7 @@
   ---footer-link: rgb(146, 146, 146);
 
   .post-content img {
-    filter: brightness(80%);
+    filter: brightness(90%);
   }
 
   hr {
