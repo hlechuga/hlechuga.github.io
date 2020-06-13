@@ -1,10 +1,13 @@
 ---
 title: "Site Reliability Engineering 101: DevOps Versus SRE"
-author: SUNNY RASKAR
+author: devops.com
 date: 2020-05-21
 categories: ["", Blogs Share]
 tags: [devops, sre]
+toc: true
+status: publish
 original_post: https://devops.com/site-reliability-engineering-101-devops-versus-sre/
+image: https://caylent.com/wp-content/uploads/2018/06/Featured-image-SRE-vs-DevOps-e1533530924756.png
 ---
 
 An Independent Software Provider (ISV) developed a financial application for a global investment firm that serves global conglomerates, leading central banks, asset managers, brokerage firms and governmental bodies. The development strategy for the application encompassed a thought through DevOps plan with cutting-edge agile tools. This has ensured zero downtime deployment at maximum productivity. The app now handles financial transactions in real-time at an enormous scale, while safeguarding sensitive customer data and facilitating uninterrupted workflow. One unfortunate day, the application crashed and this investment firm suffered a severe backlash (monetarily and morally) from its customers. 

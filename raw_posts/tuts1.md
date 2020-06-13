@@ -1,4 +1,12 @@
-
+---
+title: Tuts
+author: Harrold Lechuga
+date: 2019-06-13
+categories: ["", Blogs]
+tags: [notes]
+status: edit
+toc: true
+---
 
 
 

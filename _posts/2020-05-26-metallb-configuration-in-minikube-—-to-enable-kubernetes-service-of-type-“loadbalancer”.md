@@ -4,7 +4,10 @@ author: Faun
 date: 2020-05-26
 categories: ["", Blogs Share]
 tags: [kubernetes, ]
+status: publish
+toc: true
 original_post: https://medium.com/faun/metallb-configuration-in-minikube-to-enable-kubernetes-service-of-type-loadbalancer-9559739787df
+image: https://dyltqmyl993wv.cloudfront.net/assets/stacks/metallb-speaker/img/metallb-speaker-tweet-image.png
 ---
 
 

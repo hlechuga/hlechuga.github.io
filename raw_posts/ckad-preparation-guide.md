@@ -4,7 +4,9 @@ author: Harrold Lechuga
 date: 2020-03-23 11:33:00 +0800
 categories: ["", Blogs]
 tags: [kubernetes]
+status: publish
 toc: true
+image: https://cdn-images-1.medium.com/fit/t/1600/480/1*Zm6GcZso5etHvNtBA_Uhpw.png
 ---
 
 ## Content

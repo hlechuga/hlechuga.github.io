@@ -3,7 +3,11 @@ title: Understanding the DevOps process flow
 author: Lucidchart
 date: 2019-08-08 14:10:00 +0800
 categories: ["", Blogs Share]
+status: publish
+toc: true
 tags: [devops]
+image: https://d2slcw3kip6qmk.cloudfront.net/marketing/blog/2018Q4/devops-process-flow/ci-cd-process.png
+image_hide: true
 ---
 
 If you’ve been following the IT and development communities, you know that DevOps is having a moment. Forrester kicked off the “Year of Enterprise DevOps,” in 2018, and DevOps momentum continues to increase each year.

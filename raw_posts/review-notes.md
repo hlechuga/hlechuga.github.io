@@ -4,6 +4,10 @@ author: Harrold Lechuga
 date: 2019-12-26
 categories: ["", Blogs]
 tags: [notes]
+status: publish
+toc: true
+image: https://pm1.narvii.com/6855/6a0dda88f6f423572c349d5b68c27b00b86b7f5bv2_hq.jpg
+image_hide: true
 ---
 
 # AWS

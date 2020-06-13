@@ -2,8 +2,10 @@
 title: Kubernetes Auditing
 author: infracloud
 date: 2020-06-07
-categories: ["", Blogs Share]
+categories: ["", Tutorials]
 tags: [kubernetes]
+status: publish
+toc: true
 image: https://www.alcide.io/wp-content/uploads/2019/11/for-blog-article-page-Kubernetes-Audit-Making-Log-Auditing-a-Viable-Practice-Again.png
 original_post: https://www.infracloud.io/kubernetes-auditing
 ---

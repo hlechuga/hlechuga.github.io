@@ -194,6 +194,28 @@
     .gp { color: #818c96; }
   }
   pre { color: #acc } /* override Bootstrap */
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-y-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    // background: linear-gradient(180deg, rgba(47,62,72,1) 0%, rgba(16,17,18,1) 35%, rgba(47,62,72,1) 100%);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #3f3f3f;
+    border-radius: 6px;
+    border: 1px solid #acc;
+  }
+
+  }
   kbd { background-color: black; }
   code { background-color: #2f3e48; }
   code { 
@@ -201,5 +223,3 @@
       color: #17a2b8;
       border: 1px solid #545454;
     }
-  
-}

@@ -641,9 +641,11 @@ h5 {
 }
 
 blockquote {
-  border-left: 5px solid var(--blockquote-border-color);
+  border-left: 5px solid #fff0a6;
   padding-left: 1rem;
-  color: var(--blockquote-text-color);
+  margin-left: 2rem;
+  color: #fff0a6;
+  font-style: italic;
   .post-content & {
     a {
       color: var(--link-color);

@@ -4,8 +4,10 @@ author: parkmycloud
 date: 2020-02-25
 categories: ["", Blogs Share]
 tags: [cloud]
-image: https://pnmcartodesign.files.wordpress.com/2018/10/camera-taking-photo-of-mountain.jpeg
+status: publish
+toc: true
 original_post: https://www.parkmycloud.com/blog/azure-best-practices/
+image: https://assets2.botmetric.com/wp-content/uploads/2017/08/cloud-cost-management-through-reserved-instance-1.png
 ---
 
 
