@@ -67,6 +67,10 @@ layout: default
         {% else %}
           {{ content }}
         {% endif %}
+        {% if page.original_post %}
+          <hr/>
+          <i>This article was originally published on {{ page.original_post }}</i>
+        {% endif %}
       </div>
 
       <div class="post-tail-wrapper text-muted">

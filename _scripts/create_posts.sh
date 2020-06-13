@@ -44,7 +44,8 @@ create_posts() {
 
 main() {
   init
-
+SAVEIFS=$IFS
+IFS=$(echo -en "\n\b")
   for _file in $(ls "raw_posts")
   do
     local _path="raw_posts/$_file"
@@ -53,6 +54,7 @@ main() {
 
     cp raw_posts/$_file _posts/$_date-$_title.md
   done
+IFS=$SAVEIFS
 }
 
 main
