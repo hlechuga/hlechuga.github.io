@@ -287,6 +287,20 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
 } // .license-wrapper
 
 
+
+
+@media all and (max-width: 768px) {
+  .post img {
+    max-width: calc(100% + 1rem);
+  }
+  .post-content {
+    font-size: 1rem;
+  }
+  .post-content p {
+    font-size: 1rem;
+  }
+}
+
 @media all and (max-width: 576px) {
   .post-tail-bottom {
     -ms-flex-wrap: wrap-reverse!important;
@@ -296,11 +310,11 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
       margin-top: 1rem;
     }
   }
-}
-
-@media all and (max-width: 768px) {
-  .post img {
-    max-width: calc(100% + 1rem);
+  .post-content {
+    font-size: .9rem;
+  }
+  .post-content p {
+    font-size: .9rem;
   }
 }
 
@@ -322,6 +336,7 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
       }
     }
   } // .post
+  
 }
 
 @media all and (min-width: 768px) and (max-width: 830px) {

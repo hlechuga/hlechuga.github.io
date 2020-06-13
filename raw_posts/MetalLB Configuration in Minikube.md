@@ -8,11 +8,12 @@ status: publish
 toc: true
 original_post: https://medium.com/faun/metallb-configuration-in-minikube-to-enable-kubernetes-service-of-type-loadbalancer-9559739787df
 image: https://dyltqmyl993wv.cloudfront.net/assets/stacks/metallb-speaker/img/metallb-speaker-tweet-image.png
+image_hide: true
 ---
 
 
 
-Sofar in minikube there is no default implementation of network load-balancer. Load-balancer will remain in the “pending” state indefinitely when created. Minikube Version 1.10.0-beta.2 has a new powerful addon i.e. MetalLB. MetalLB had addressed the gap and provides the network LoadBalancer implementation as an addon.
+So far in minikube there is no default implementation of network load-balancer. Load-balancer will remain in the “pending” state indefinitely when created. Minikube Version 1.10.0-beta.2 has a new powerful addon i.e. MetalLB. MetalLB had addressed the gap and provides the network LoadBalancer implementation as an addon.
 
 Public cloud providers will assign the IP for the load balancer, whereas on bare metal MetalLB is responsible for the allocation of the IP Address.
 
