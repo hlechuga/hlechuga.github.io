@@ -6,7 +6,7 @@ categories: ["", Blogs]
 tags: [kubernetes]
 status: publish
 toc: true
-image: https://cdn-images-1.medium.com/fit/t/1600/480/1*Zm6GcZso5etHvNtBA_Uhpw.png
+image: https://hlechuga-blog-content-share.s3-ap-southeast-1.amazonaws.com/kerbernetes-cert.png
 ---
 
 ## Content

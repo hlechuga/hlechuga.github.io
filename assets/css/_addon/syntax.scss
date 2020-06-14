@@ -36,7 +36,7 @@ html[mode=dark] {
   // background: var(--highlight-bg-color);
   @extend %code-snippet-radius;
   // color: var(--highlighter-rouge-color);
-  // margin-bottom: 1.2em; /* Override BS Inline-code style */
+  margin-bottom: 1.2em; /* Override BS Inline-code style */
 }
 
 .highlight {
