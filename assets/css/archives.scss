@@ -111,6 +111,8 @@
         margin-left: 2.5rem;
         position: relative;
         top: .1rem;
+        font-family: oswald, sans-serif;
+        text-transform: uppercase;
       }
       &::after {
         @extend %date-timeline;

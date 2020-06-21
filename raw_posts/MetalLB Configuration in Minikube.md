@@ -1,15 +1,72 @@
 ---
-title: MetalLB Configuration in Minikube — To enable Kubernetes service of type “LoadBalancer”
+title: Minikube Addons
 author: Faun
 date: 2020-05-26
 categories: ["", Blogs Share]
 tags: [kubernetes, ]
-status: publish
+status: draft
 toc: true
-original_post: https://medium.com/faun/metallb-configuration-in-minikube-to-enable-kubernetes-service-of-type-loadbalancer-9559739787df
 image: https://dyltqmyl993wv.cloudfront.net/assets/stacks/metallb-speaker/img/metallb-speaker-tweet-image.png
 image_hide: true
 ---
+
+
+
+Minikube has been as go to kubernetes cluster on local machine. It helps a lot of us learn and experiment Kubernetes. It is continually adding add-ons. As of v1.11.0 
+
+`minikube addons list`
+
+![image-20200616025354199](MetalLB Configuration in Minikube.assets/image-20200616025354199.png)
+
+
+
+## Ambassador
+
+Ambassador is one of many API gateway for available for Kubernetes. 
+
+![image-20200616031712758](MetalLB Configuration in Minikube.assets/image-20200616031712758.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -22,8 +79,6 @@ Let’s see as how we can enable the same in minikube and configure the same wit
 *minikube addons list* will show that metalLB is disabled.
 
 
-
-![img](https://miro.medium.com/max/649/1*VG_RWQ_re7tr3J5Xi_gMKg.png)
 
 Enable the addon using the command *minikube addons enable metallb*
 

@@ -1,5 +1,5 @@
 ---
-title: Kubernetes Auditing
+title: Importance of Kubernetes Auditing
 author: infracloud
 date: 2020-06-07
 categories: ["", Tutorials]
@@ -10,7 +10,13 @@ image: https://www.alcide.io/wp-content/uploads/2019/11/for-blog-article-page-Ku
 original_post: https://www.infracloud.io/kubernetes-auditing
 ---
 
-Auditing is an essential administrative input to understand the way a system is affected or being used. An audit trail is a log of the sequence of chronological events that occurred on a system. It helps administrators understand what event occurred, when did it take place and the trigger or the source of the event. It is also a compliance or legal requirement for many businesses and so an important part of IT systems. In this tutorial, we will look at how to do auditing in Kubernetes.
+
+
+When a Kubernetes deployment suffers a security breach, it can be difficult for security teams to diagnose and identify the source of the intrusion and its impact. Each Kubernetes cluster may host multiple applications, and each application may be composed of dozens or even hundreds of interacting microservices deployed as pods.
+
+The complex and dynamic communication between the applications’ components, as well as the automated Kubernetes orchestration activities, makes it difficult to understand the structure of each application and differentiate between normal behavior and malicious behavior from the observed network activity. The ephemeral nature of pods, which may exist only for moments to perform an activity before they are disposed of, makes this task even more difficult. A pod that was vulnerable may be gone by the time security teams are investigating a breach, or resume normal operation as the attacker pauses its abuse or pivots or escalates the attack to another Kubernetes resource.
+
+One solution to the problem of tracing breaches is to examine the Kubernetes audit logs since they record all cluster-administration activity, even for pods that may have existed for seconds and are now gone. But K8s audit logs are complex and often convoluted, requiring deep expertise to understand. Therefore, security teams need to not only increase their proficiency with K8s audit logs, but also to apply automation and software tools to the K8s logs to detect suspicious behavior after the fact and even during their occurrence.
 
 ## Introduction
 

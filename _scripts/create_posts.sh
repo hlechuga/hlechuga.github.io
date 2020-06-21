@@ -49,7 +49,7 @@ main() {
   init
 SAVEIFS=$IFS
 IFS=$(echo -en "\n\b")
-  for _file in $(ls "raw_posts")
+  for _file in $(ls -p "raw_posts"| grep -v / )
   do
     local _path="raw_posts/$_file"
     local _title=$(read_title "$_path")

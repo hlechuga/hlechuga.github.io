@@ -6,6 +6,7 @@ categories: ["", Blogs Share]
 tags: [devops, sre]
 toc: true
 status: publish
+pin: true
 original_post: https://devops.com/site-reliability-engineering-101-devops-versus-sre/
 image: https://caylent.com/wp-content/uploads/2018/06/Featured-image-SRE-vs-DevOps-e1533530924756.png
 ---

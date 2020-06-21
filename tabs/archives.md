@@ -1,5 +1,5 @@
 ---
-title: Timeline
+title: Archives
 ---
 
 <div id="archives" class="pl-xl-2">

@@ -6,6 +6,7 @@ categories: ["", Blogs]
 tags: [kubernetes]
 status: publish
 toc: true
+pin: true
 image: https://hlechuga-blog-content-share.s3-ap-southeast-1.amazonaws.com/kerbernetes-cert.png
 ---
 

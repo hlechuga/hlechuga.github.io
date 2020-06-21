@@ -215,6 +215,13 @@
     border: 1px solid #acc;
   }
 
+  body{
+    scrollbar-face-color: rgb(210,210,210); /* Firefox 63 compatibility */
+    scrollbar-track-color: rgb(46,54,69); /* Firefox 63 compatibility */
+    scrollbar-color: #acc transparent;
+    scrollbar-width: thin;
+  }
+
   }
   kbd { background-color: black; }
   code { background-color: #2f3e48; }

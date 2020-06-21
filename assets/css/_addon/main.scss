@@ -78,13 +78,25 @@ $sidebar-display: "sidebar-display";
     text-align: center;
     a {
       // color: var(--site-title-color);
-      font-weight: 900;
-      font-size: 2rem;
-      letter-spacing: .5px;
-      font-family: 'Odibee Sans', sans-serif;
+      font-size: 2.2rem;
+      position: relative;
+      color: #007bff;
+      font-family: 'Fjalla One', sans-serif;
+      text-transform: uppercase;
       &:hover {
         text-decoration: none;
       }
+      
+    }
+    a:after {
+      content: "h.lechuga";
+      font-size: 2.2rem;
+      font-family: 'Fjalla One', sans-serif;
+      text-transform: uppercase;
+      position: absolute; 
+      left: 2px; 
+      top: 8px;
+      color: #dc354561;
     }
   }
 
@@ -621,21 +633,32 @@ h3 {
   @extend %heading;
   @extend %section;
   @extend %anchor;
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  color: #ffc107ad;
 }
 
 h4 {
   @extend %heading;
   @extend %section;
   @extend %anchor;
-  font-size: 1.15rem;
+  font-size: 1rem;
+  color: #ffc107ad;
 }
 
 h5 {
   @extend %heading;
   @extend %section;
   @extend %anchor;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  color: #ffc107ad;
+}
+
+h5 {
+  @extend %heading;
+  @extend %section;
+  @extend %anchor;
+  font-size: 0.9rem;
+  color: #ffc107ad;
 }
 
 blockquote {
@@ -732,8 +755,9 @@ a {
   h1 {
     margin-top: 3rem;
     color: #ffb000;
-    font-family: 'Microsoft Yahei', sans-serif;
-    font-weight: bold
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase
   }
   em { /* MarkDown italic */
     padding-right: .2rem;
@@ -934,6 +958,7 @@ table {
     h1 {
       margin-top: 2.2rem;
       font-size: 1.55rem;
+      text-transform: uppercase
     }
   }
 
@@ -1032,6 +1057,7 @@ table {
     display: none;
     ~.post-content {
       margin-top: 3rem;
+      text-transform: uppercase;
     }
   }
 
@@ -1390,8 +1416,14 @@ table {
       letter-spacing: 1px;
       margin: 0;
       color:#007bff;
-      font-family: 'Odibee Sans', sans-serif;
+      font-family: 'Fjalla One', sans-serif;
       font-weight: bold;
+    }
+
+    .site-title a:after {
+      font-size: 2.7rem;
+      left: 2px; 
+      top: 16px;
     }
 
     .site-subtitle {

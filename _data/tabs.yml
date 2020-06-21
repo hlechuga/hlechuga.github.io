@@ -2,17 +2,17 @@
 
 
 -
-  name: Home
+  name: "Home"
   icon: "fas fa-home"
 -
-  name: Writing
+  name: "Writing"
   icon: "fas fa-stream"
   path: tabs
   url: writing
 -
-  name: "Timeline"
+  name: "Archives"
   path: tabs
-  url: timeline
+  url: archives
   icon: "fas fa-archive"
 -
   name: "About"

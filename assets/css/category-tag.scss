@@ -23,6 +23,8 @@
     >a { /* post's title */
       font-size: 1.1rem;
       @extend %no-bottom-border;
+      font-family: Oswald, sans-serif;
+      text-transform: uppercase;
     }
     >span:last-child {
       white-space: nowrap;

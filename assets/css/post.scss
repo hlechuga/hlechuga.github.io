@@ -25,6 +25,13 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
 
 .author {
   @include semi-bold;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: .9rem;
+}
+
+.timeago {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: .9rem;
 }
 
 .post {
@@ -298,6 +305,7 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
   }
   .post-content p {
     font-size: 1rem;
+    font-family: 'Roboto Condensed', sans-serif;
   }
 }
 
