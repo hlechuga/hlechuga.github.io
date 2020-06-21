@@ -370,6 +370,33 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
     margin-right: -.5rem;
   }
 
+  #post-wrapper {
+    background-color: #e9ecef;
+    color: #343a40;
+  }
+
+  .post h1 {
+    text-shadow: 1px 1px #343a40;
+  }
+
+  .post h2, h3, h4, h5, h6{
+    color: #da9600
+  }
+
+  #post-extend-wrapper {
+    background-color: #e9ecef;
+    color: #343a40;
+  }
+
+  #related-posts .card {
+    background-color: #e9ecef;
+    color: #343a40;
+  }
+
+  #related-posts .card h3{
+    color: #343a40;
+  }
+
 }
 
 /*
