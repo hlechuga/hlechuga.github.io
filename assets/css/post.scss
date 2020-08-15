@@ -377,10 +377,12 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
 
   .post h1 {
     text-shadow: 1px 1px #343a40;
+    font-weight: 900;
   }
 
   .post h2, h3, h4, h5, h6{
-    color: #da9600
+    color: #da9600;
+    font-weight: 900;
   }
 
   #post-extend-wrapper {

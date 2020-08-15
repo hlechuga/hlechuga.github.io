@@ -14,17 +14,27 @@ image_hide: true
 
 Minikube has been as go to kubernetes cluster on local machine. It helps a lot of us learn and experiment Kubernetes. It is continually adding add-ons. As of v1.11.0 
 
-`minikube addons list`
 
-![image-20200616025354199](MetalLB Configuration in Minikube.assets/image-20200616025354199.png)
 
 
 
 ## Ambassador
 
-Ambassador is one of many API gateway for available for Kubernetes. 
+ An API gateway acts as a single entry point into a system. It takes all API calls from clients, then routes them to the appropriate microservice with request routing, composition, and protocol translation.  An API gateway is set up in front of the microservices and becomes the entry point for every new request being executed by the app. It simplifies both the client implementations and the microservices app. 
 
-![image-20200616031712758](MetalLB Configuration in Minikube.assets/image-20200616031712758.png)
+Ambassador is one of many API gateway available for Kubernetes. Luckily it's readily available in Minikube, we just have to enable it. Let's do this!
+
+`minikube addons list` to check all available and enabled addons. You can see ambassador is not yet enable. 
+
+![image-20200616025354199](MetalLB Configuration in Minikube.assets/image-20200616025354199.png)
+
+`minikube addons enable ambassador`. 
+
+![image-20200628065357851](MetalLB Configuration in Minikube.assets/image-20200628065357851.png)
+
+Ambassador components placed in `ambassador` namespace should be ready in a moment. Let's check by running `kubectl get po -n ambassador`  
+
+![image-20200628095000754](MetalLB Configuration in Minikube.assets/image-20200628095000754.png)
 
 
 
