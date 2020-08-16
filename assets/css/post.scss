@@ -47,6 +47,11 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
   }
 }
 
+.post h1 {
+  text-shadow: 1px 1px #343a40;
+  font-weight: 900;
+}
+
 .post-tail-wrapper {
   margin-top: 4rem;
   border-bottom: 1px double var(--main-border-color);
