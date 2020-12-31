@@ -600,7 +600,7 @@ footer {
   cursor: pointer;
   position: fixed;
   background: var(--button-bg);
-  color: var(--btn-backtotop-color);
+  color: #f8f9fa;
   height: 2.6em;
   width: 2.7em;
   border-radius: 50%;
@@ -619,6 +619,7 @@ footer {
 h1 {
   @extend %heading;
   font-size: 1.8rem;
+  text-shadow:1px 1px rgba(0,123,255,0.5);
 }
 
 h2 {
@@ -626,7 +627,8 @@ h2 {
   @extend %section;
   @extend %anchor;
   font-size: 1.4rem;
-  color: #da9600;
+  color: #000;
+  // text-shadow:1px 1px rgba(0,123,255,0.5);
   font-weight: 900;
 }
 
@@ -635,7 +637,8 @@ h3 {
   @extend %section;
   @extend %anchor;
   font-size: 1.1rem;
-  color: #ffc107ad;
+  color: #000;
+  // text-shadow: 1px 1px rgba(0,123,255,.5);
 }
 
 h4 {
@@ -643,7 +646,8 @@ h4 {
   @extend %section;
   @extend %anchor;
   font-size: 1rem;
-  color: #ffc107ad;
+  color: #000;
+  // text-shadow: 1px 1px rgba(0,123,255,.5);
 }
 
 h5 {
@@ -651,23 +655,26 @@ h5 {
   @extend %section;
   @extend %anchor;
   font-size: 0.95rem;
-  color: #ffc107ad;
+  color: #000;
+  // text-shadow: 1px 1px rgba(0,123,255,.5);
 }
 
-h5 {
+h6 {
   @extend %heading;
   @extend %section;
   @extend %anchor;
   font-size: 0.9rem;
-  color: #ffc107ad;
+  color: #000;
+  // text-shadow: 1px 1px rgba(0,123,255,.5);
 }
 
 blockquote {
-  border-left: 5px solid #fff0a6;
+  border-left: 5px solid #28a745;
   padding-left: 1rem;
   margin-left: 2rem;
-  color: #fff0a6;
+  color: #495057;
   font-style: italic;
+  background-color: #b2fd6d12;
   .post-content & {
     a {
       color: var(--link-color);
@@ -755,7 +762,7 @@ a {
 .post {
   h1 {
     margin-top: 3rem;
-    color: #ffb000;
+    color: #212529;
     font-family: 'Oswald', sans-serif;
     font-weight: bold;
     text-transform: uppercase

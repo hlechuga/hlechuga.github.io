@@ -10,7 +10,12 @@ pin: true
 image: https://hlechuga-blog-content-share.s3-ap-southeast-1.amazonaws.com/kerbernetes-cert.png
 ---
 
-## Content
+CKAD Preparation Guide
+============
+
+**CKAD** or **Certified Kubernetes Application Developer** is one of the kubernetes certification aims to equip developers an ability to design, build, configure, and expose cloud native applications for Kubernetes. A Certified Kubernetes Application Developer can define application resources and use core primitives to build, monitor, and troubleshoot scalable applications and tools in Kubernetes. Here are few tips which, in my opinion, could help candidates perform at their best not only during the exam but also on day-to-day jobs.
+
+### Content
 
 - Core Concepts 13%
 - Configuration 18%
@@ -20,41 +25,36 @@ image: https://hlechuga-blog-content-share.s3-ap-southeast-1.amazonaws.com/kerbe
 - Services & Networking 13%
 - State Persistence 8%
 
-## Requirements
+### Requirements
 
-- Exam registration and confimation code of exam. Register at https://www.cncf.io/certification/ckad/
-- A quiet room. 
-- Laptop or computer with good internet connection. You can check hardware compatibility in https://www.examslocal.com/ScheduleExam/Home/CompatibilityCheck ; 2nd monitor is optional. 
-- Valid ID: Passport; Government-issued driver’s license/permit; Government-Issued local language ID (plastic card with photo and signature) or SSS; National Identity card or UMID; State or province-issued identity card or Postal ID; Debit (ATM)Card; Credit Card; Health Insurance Card.
-- Exam Dration: 2hrs
-- PASSING RATE: 66%
+- Exam registration and confirmation code of exam.
+- A quiet room
+- A laptop or computer with camera and good internet connection. Additional monitor is optional but allowed. 
+- Valid ID
 
-## Room Environment
+### Room Environment
 
-- You must be alone in the room.
-- Your camera must not against the light. Avoid being behind the widow or lights.
-- You will be asked to show your environment by turning the camera around you slowly and behind of desk.
-- Ready your valid ID. You must present it to the proctor.
-- You are forbid to put anything else on your desk or beside your computer. 
-- You cannot talk, whispering words. Do not read questions out loud, you must remain silent.
-- You are forbid to put you hand over your mouth, your face should remain entirely visible all the time.
-- Only a clear bottled water(no labels) or a clear glass of water are allowed on table.
+- You should be alone in a room.
+- Your camera must not against the lights. Avoid being behind the window or lights.
+- Ready your valid ID. You will persent it to the proctor
+- You will be asked to show your environment by turning the camera around you slowly and behind your desk. Remove anything on your desk or beside your computer. Only a clear bottled water(no labels) or a clear glass of water is allowed on table. 
+- Remain silent. You cannot talk or whisper words during exam. Do not read questions out loud. Do not put you hand over your mouth or face. Your face should remain entirely visible all the time. Failure to do so might disqualify you
 
-## Desktop Environment
+### Desktop Environment
 
-- Only the browser are allowed open and must have only 2 tabs; the exam and the kubernetes documentation. You can request to have separate window on each tab but strictly no other tab.
-- Remove applications from dock or taskbar to avoid opening accidentally.
-- You are allowed to open bookmarks. Bookmarking all essential page could save you navigation time.
+- Only the browser is allowed open on desktop; you can only have 2 tabs, the exam and the kubernetes documentation. You can request to have it in separate window but strictly no other tabs.
+- You may undock the applications on taskbar or dock to avoid opening them accidentally.
+- You are allowed to open bookmarks. Bookmarking all essential page could save you time on navigating the documentation.
 
-## Tips and Advice
+### Tips and Advice
 
-1. This is not a "multiple choice" kind of exam. You must know kubernetes really well and you must know how to fully utilize kubectl (and vim or nano for editing).
-2. If you have budget, treat yourself and get a training course with positive reviews. I suggest a course from Mumshad Manambath - CKAD with Practice Test on Udemy. 
-3. Practice with this one https://github.com/dgkanatsios/CKAD-exercises/blob/master. It covers a lot. 
-4. Exam provides notepad on the browser(not notepad on your PC), There is no marker on exam, you cannot flag your questions and just go back. You must use the notepad to take note all your unanswered questions. 
-5. Do not write YAML files from scratch. You can start by creating a pod, deployment, job or cronjob using `kubectl run` or `kubectl create`
+1. This is not a "multiple choice" kind of exam. You must know kubernetes really well and fully utilize the kubectl (and vim or nano for editing).
+2. The exam takes 2hrs and the passing rate is 66%. Speed is the key so practice and practice. Practice with https://github.com/dgkanatsios/CKAD-exercises/blob/master. It covers a lot. 
+3. If you have extra budget, treat yourself and get a training course with positive reviews. A course from Mumshad Manambath - CKAD with Practice Test on Udemy is a good one. 
+4. There's a notepad on the exam's sidebar, use it to note your things and note those skipped/unanswered questions. 
+5. Do not write YAML files from scratch. Start by creating a resource by using `kubectl run` or `kubectl create` then edit it
 
-Use `kubectl create -h` to see list of available objects
+Use `kubectl create -h` to see list of declarative objects
 
 ```shell
 Available Commands:
@@ -71,12 +71,11 @@ Available Commands:
   role                Create a role with single rule.
   rolebinding         Create a RoleBinding for a particular Role or ClusterRole
   secret              Create a secret using specified subcommand
-  service             Create a service using specified subcommand.
+  service             Create a service using specified subcommand
   serviceaccount      Create a service account with the specified name
 ```
 
-> ​			I recommend using `generators` or `kubectl run` for creating these 4 objects. It is fast and easy. 
->
+> I recommend using `generators` or `kubectl run` for creating these 4 objects. It is fast and easy. 
 
 ```bash
 # For Pod; adding --restart="Never" will make a pod
@@ -93,7 +92,7 @@ kubectl run <job_name> --image <image_tag> --restart OnFailure --schedule="*/1 *
 
 
 
-4. To save an object's yaml without actually creating it.  Use `-o yaml --dry-run --export`. 
+4. Save an object's yaml without actually creating it.  Use `-o yaml --dry-run --export`. 
 
 ```shell
 kubectl run <pod_name> --image image_tag --restart Never -o yaml --dry-run --export > pod.yaml
@@ -109,9 +108,9 @@ kubectl apply -f pod.yaml
 kubectl edit po <pod_name>
 ```
 
-​		Be careful on some imutable fields of pods. It cannot be edited during pods runtime. Example. pod.specs.containers.args or pod.specs.tolerations
+​		Be careful on some imutable fields of pods as it no editable during pods runtime. Example: `pod.specs.containers.args` or `pod.specs.tolerations`
 
-5. Better learn navigating through cluster and namespace. Always be aware of the namespace you're working on while answering a question. Using `-n <target_namespace> `  on every command is very time consuming. Unlike openshift that you can just `oc projects <namespace>` In kubernetes you have to navigate on `kubeconfig` and set them manually. I really recommend to get hang on this 
+5. Learn on navigating through cluster and namespace. Be aware of the namespace you're working on while solving the problem, you might editing the wrong namespace that obviously will fail you.Unlike in Openshift with `oc project` In kubernetes you have to navigate on `kubeconfig` and set them manually. I really recommend to get hang on this 
 
 ```shell
 # To know your current context and namespace. Your current context has an asterisk(*)
@@ -124,7 +123,7 @@ kubectl config use-context <context_name>
 
 
 
-6. Some pods are annoying and dont get deleted easily. force deletion of pods is one a great time saver too. 
+6. Force deletion of pods is one a great time saver. Some pods are annoying and took time to get deleted or sometimes it wont get deleted. 
 
 ```shell
 kubectl delete po <pod_name> --force --grace-period 0 
@@ -155,7 +154,7 @@ kubectl set resources po <pod_name> --requests=cpu=100m,memory=100Mi
 
 
 
-8. If you know the object structure very well. While your editing and you only forgot a small portion of it. You can use `kubectl explain`. I find it very useful. 
+8. Use `kubectl explain`. I find it very useful. 
 
 ```shell
 kubectl explain <object>.<fields>
@@ -180,7 +179,7 @@ set tabstop=2
 
 
 
-10. Set aliases. Again it is not a violation. Speed up your productivity by using aliases.
+10. Set your aliases. Speed up your productivity by using aliases.
 
 ```shell
 # sample only
@@ -193,15 +192,13 @@ alias kgw='kubectl get -o wide --show-labels'
 
 > You are not allowed to set aliases and vim setup before the exam. You must input them right during the exam. 
 
+11. Know basic of crontab expression for creating cronjobs https://crontab.guru/. Basics are enough.  
 
+12. Of all the question, The problem I find it hard to complete is the [Network Policy](https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy) and [Logging architecture on multicontainer](https://kubernetes.io/docs/concepts/cluster-administration/logging/)(I answered it but took my time). Review this part and bookmark it. It has a large points.  
 
-11. Know basic of crontab expression for creating cronjobs https://crontab.guru/. Just the basic.  
+13. Learn and memorize object's field structure as much as you can. Navigating through the kubernetes documentation can consume a lot of your time. 
 
-12. Of all the question, I find really hard to complete is the [Network Policy](https://kubernetes.io/docs/tasks/administer-cluster/declare-network-policy) and [Logging on multicontainer](https://kubernetes.io/docs/concepts/cluster-administration/logging/)(I answered it but hard). Review this part and bookmark it. It has large points.  
-
-13. Learn and memorize object's field structure as much as you can. Navigating to kubernetes documentation everytime can consume a lot of your time. 
-
-## Resources
+### Resources
 
 https://medium.com/@nassim.kebbani/how-to-beat-kubernetes-ckad-certification-c84bff8d61b1
 
@@ -220,5 +217,4 @@ https://github.com/twajr/ckad-prep-notes
 https://www.linkedin.com/pulse/my-ckad-exam-experience-atharva-chauthaiwale/
 
 https://docs.google.com/spreadsheets/d/1WPHt0gsb7adVzY3eviMK2W8LejV0I5m_Zpc8tMzl_2w/edit#gid=0
-
 
