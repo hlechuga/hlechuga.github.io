@@ -13,13 +13,13 @@
 }
 
 %link-hover {
-  color: #343a40!important;
-  text-shadow: 1px 1px rgba(0,123,255,.5);
-  text-decoration: none;
+  color: var(--link-color);
 }
 
 %link-color {
-  color: var(--link-color);
+  color: #343a40!important;
+  text-shadow: 1px 1px rgba(0,123,255,.5);
+  text-decoration: none;
 }
 
 %link-underline {
