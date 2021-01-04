@@ -305,10 +305,10 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
     max-width: calc(100% + 1rem);
   }
   .post-content {
-    font-size: 0.8rem;
+    font-size: 0.98rem;
   }
   .post-content p {
-    font-size: 0.8rem;
+    font-size: 0.98rem;
     line-height: 2;
     font-family: 'Maven Pro', sans-serif;
   }
@@ -327,7 +327,7 @@ $prompt-newer: "{{ site.data.label.post.button.next }}";
     font-size: .95rem;
   }
   .post-content p {
-    font-size: .95rem;
+    font-size: .7rem;
   }
 }
 
