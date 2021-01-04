@@ -5,10 +5,10 @@
   name: "Home"
   icon: "fas fa-home"
 -
-  name: "Writing"
+  name: "Tags"
   icon: "fas fa-stream"
   path: tabs
-  url: writing
+  url: tags
 -
   name: "Archives"
   path: tabs

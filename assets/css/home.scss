@@ -37,11 +37,12 @@
     margin-bottom: .6rem;
     color: var(--post-list-text-color);
     >p { /* Make preview shorter in Home page*/
+      font-size: 0.98rem;
       margin: 0;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;
-      -webkit-line-clamp: 2;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
     }
   }

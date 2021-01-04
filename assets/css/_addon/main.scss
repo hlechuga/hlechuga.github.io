@@ -51,7 +51,7 @@ body {
   background: var(--body-bg);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
-  font-family: 'PT Sans', 'Microsoft Yahei', sans-serif;
+  font-family: 'Maven Pro', 'Microsoft Yahei', sans-serif;
 }
 
 /*--- sidebar layout ---*/
@@ -499,11 +499,11 @@ footer {
   a {
     @include semi-bold;
     color: #7a7b7d14;
+    text-shadow: none;
     &:link {
       @include no-text-decoration;
     }
     &:hover {
-      @extend  %link-hover;
       @include no-text-decoration;
     }
   }
@@ -671,7 +671,6 @@ h6 {
 blockquote {
   border-left: 5px solid #28a745;
   padding-left: 1rem;
-  margin-left: 2rem;
   color: #495057;
   font-style: italic;
   background-color: #b2fd6d12;
@@ -1324,7 +1323,12 @@ table {
   }
 
   .post-content p {
-    font-size: 1.08rem;
+    font-size: 0.90rem;
+    line-height: 2;
+  }
+
+  .post-content li {
+    font-size: 0.90rem;
   }
 
   footer>div.d-felx {
