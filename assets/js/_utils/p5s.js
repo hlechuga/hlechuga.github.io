@@ -47,6 +47,12 @@ function setup() {
   }
 }
 
+function windowResized() {
+  var clientHeight = document.getElementById('nav-wrapper').clientHeight;
+  var clientWidth = document.getElementById('nav-wrapper').clientWidth;
+  resizeCanvas(clientWidth, clientHeight);
+}
+
 function draw() {
   background('#0f0f0f');
   for(let i = 0;i<particles.length;i++) {

@@ -1,17 +1,9 @@
-/*
- * Caculate the Timeago
- * v2.0
- * https://github.com/cotes2020/jekyll-theme-chirpy
- * © 2019 Cotes Chung
- * MIT Licensed
- */
-
 $(function() {
 
   function timeago(date, isLastmod) {
     var past = new Date(date);
 
-    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+    const months = ["01", "02", "03","04", "05", "06", "07", "08", "09", "10", "11", "12"];
     let formatted_date =  months[past.getMonth()] + " " + past.getDate() + " " + past.getFullYear();
     return formatted_date;
   }
