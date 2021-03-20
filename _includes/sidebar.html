@@ -4,7 +4,7 @@
 
     <div class="profile-text mt-3">
       <div class="site-title">
-        <a href="{{ '/' | relative_url }}">{{- site.title -}}</a>
+        <a href="{{ '/' | relative_url }}">HARROLD</a><br>
       </div>
       <div class="site-subtitle font-italic">{{- site.tagline -}}</div>
     </div>
@@ -29,7 +29,7 @@
         or item.name == "Home" and page.layout == "home" %}active{% endif %}">
       <a href="{{ ref }}" class="nav-link d-flex justify-content-center align-items-center w-100">
 
-        <span>- {{ item.name | upcase }}</span>
+        <span>{{ item.name | upcase }}</span>
       </a>
     </li> <!-- .nav-item -->
   {% endfor %}

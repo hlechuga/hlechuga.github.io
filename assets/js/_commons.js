@@ -13,3 +13,5 @@
 {% include_relative _commons/copy-link.js %}
 
 {% include_relative _utils/tooltip-loader.js %}
+
+{% include_relative _utils/p5s.js %}

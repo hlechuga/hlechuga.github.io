@@ -4,6 +4,17 @@
 @import "_colors/light-typography";
 @import "_colors/dark-typography";
 
+@font-face {
+  font-family: 'ARCHITEKT';
+  src: url(/assets/fonts/NBArchitektStd-Bold.otf);
+}
+
+@font-face {
+  font-family: 'ARCHITEKT LIGHT';
+  src: url(/assets/fonts/NBArchitektStd-Light.otf);
+}
+
+
 @mixin set-visible($light-display, $dark-display) {
   [light-mode-invisible] {
     display: $light-display;
@@ -78,10 +89,11 @@ $sidebar-display: "sidebar-display";
     text-align: center;
     a {
       // color: var(--site-title-color);
-      font-size: 2.2rem;
+      // font-size: 3.2rem;
       position: relative;
       color: #007bff;
-      font-family: 'Fjalla One', sans-serif;
+      font-family: 'ARCHITEKT', mono;
+      font-weight: 600;
       text-transform: uppercase;
       &:hover {
         text-decoration: none;
@@ -89,14 +101,15 @@ $sidebar-display: "sidebar-display";
       
     }
     a:after {
-      content: "h.lechuga";
-      font-size: 2.2rem;
-      font-family: 'Fjalla One', sans-serif;
+      content: "lechuga";
+      // font-size: 3.2rem;
+      font-family: 'ARCHITEKT', monospace;
+      font-weight: 600;
       text-transform: uppercase;
       position: absolute; 
-      left: 2px; 
-      top: 8px;
-      color: #dc354561;
+      // left: 25px; 
+      // top: 36px;
+      color: #78909c;
     }
   }
 
@@ -129,7 +142,7 @@ $sidebar-display: "sidebar-display";
     }
     &.active {
       .nav-link {
-        color: #fcfcfc;
+        color: #78909c;
       }
     }
   }
@@ -226,10 +239,18 @@ $sidebar-display: "sidebar-display";
 #nav-wrapper {
   width: 100%;
   flex-grow: 1;
+  position: relative;
+  z-index: 4;
+}
+
+canvas {
+  position: absolute;
+  z-index: 3;
 }
 
 #profile-wrapper {
   margin-top: 2rem;
+  margin-bottom: 4rem;
 }
 
 #avatar {
@@ -484,7 +505,7 @@ footer {
   padding: 0 1rem;
   height: $footer-height;
   font-size: 0.8rem;
-  color: #7a7b7d14;
+  // color: #7a7b7d14;
   background-color: var(--footer-bg-color);
   >div.d-flex {
     line-height: 1.2rem;
@@ -498,7 +519,7 @@ footer {
   }
   a {
     @include semi-bold;
-    color: #7a7b7d14;
+    // color: #7a7b7d14;
     text-shadow: none;
     &:link {
       @include no-text-decoration;
@@ -860,7 +881,7 @@ table {
     }
   }
   p {
-    font-size: 0.90rem;
+    font-size: 0.98rem;
   }
 }
 
@@ -981,6 +1002,15 @@ table {
     }
   }
 
+  .site-title a {
+    font-size: 3.2rem;
+  }
+
+  .site-title a:after {
+    font-size: 3.2rem;
+    left: 25px; 
+    top: 36px;
+  }
   
   #avatar>a {
     width: 5rem;
@@ -1058,6 +1088,17 @@ table {
       transition: none;
     }
   }
+
+  .site-title a {
+    font-size: 2.2rem;
+  }
+
+  .site-title a:after {
+    font-size: 2.2rem;
+    left: 17px; 
+    top: 19px;
+  }
+
 
   #topbar-wrapper {
     @extend %slide;
@@ -1162,6 +1203,16 @@ table {
     overflow-y: scroll;
   }
 
+  .site-title a {
+    font-size: 2.4rem;
+  }
+
+  .site-title a:after {
+    font-size: 2.4rem;
+    left: 18px; 
+    top: 23px;
+  }
+
   #main-wrapper {
     margin-left: $sidebar-width-medium;
   }
@@ -1216,6 +1267,16 @@ table {
         @include ml-mr(.25rem);
       }
     }
+  }
+
+  .site-title a {
+    font-size: 2.2rem;
+  }
+
+  .site-title a:after {
+    font-size: 2.2rem;
+    left: 17px; 
+    top: 19px;
   }
 
   #topbar-wrapper {
@@ -1400,7 +1461,7 @@ table {
   }
 
   #profile-wrapper {
-    margin: 2rem 2rem 3rem 3rem;
+    margin: 3rem 2rem 5rem 3rem;
     -ms-flex-direction: column!important;
 
     #avatar {
@@ -1436,18 +1497,18 @@ table {
     width: $sidebar-width-large;
 
     .site-title a {
-      font-size: 2.7rem;
+      font-size: 3.2rem;
       letter-spacing: 1px;
       margin: 0;
       color:#007bff;
-      font-family: 'Fjalla One', sans-serif;
+      font-family: 'ARCHITEKT', monospace;
       font-weight: bold;
     }
 
     .site-title a:after {
-      font-size: 2.7rem;
-      left: 2px; 
-      top: 16px;
+      font-size: 3.2rem;
+      left: 25px; 
+      top: 36px;
     }
 
     .site-subtitle {

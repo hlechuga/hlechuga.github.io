@@ -1,16 +1,13 @@
 # The Site Settings
-# v2.0
-# https://github.com/cotes2020/jekyll-theme-chirpy
-# © 2017-2019 Cotes Chung
-# MIT licensed
+
 
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: H.LECHUGA                          # the main title
+title: HARROLD LECHUGA                          # the main title
 
-tagline: Learning by experience  # it will display as the sub-title
+tagline: # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Harrold Lechuga

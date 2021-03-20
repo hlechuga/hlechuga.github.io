@@ -15,7 +15,7 @@ image_hide: false
 
 https://orangesharing.com/pages/viewpage.action?pageId=204440519
 
-# Designing Highly Available Kubernetes Application
+# Kubernetes Improvements
 
 ```bash
 # latest Kubernetes 
@@ -30,18 +30,14 @@ openshift v3.11.317
 kubernetes v1.11.0+d4cacc0
 ```
 
-Kubernetes was built with reliability in mind but the high avalaible application within Kubernetes is not .
-
 This study will focus on achieving the high availability of an application running in Kubernetes by combining and testing these features of Kubernetes.
 
-1. topologySpreadConstraints  `v1.19 stable`
+1. topologySpreadConstraints `v1.18 beta` `v1.19 stable`
 2. podAntiAffinity `stable`
-3. PodDisruptionBudget   `v1.5 beta ` `policy/v1beta1`
+3. PodDisruptionBudget   `v1.5 beta ` 
 4. RollingUpdateStrategy `stable`
-5. HorizontalPodAutoScaler `beta` `autoscaling/v2beta2`
-6. PodPriority `1.8 alpha` `scheduling.k8s.io/v1`
-
-
+5. HorizontalPodAutoScaler `beta` 
+6. PodPriority `1.8 alpha` `1.11 stable`
 
 ### topologySpreadConstraints
 
@@ -56,10 +52,10 @@ spec:
   topologySpreadConstraints:
   - maxSkew: 1
     topologyKey: node
-    whenUnsatisfiable: DoNotSchedule
+    whenUnsatisfiable: scheduleAnyway # DoNotSchedule
     labelSelector:
       matchLabels:
-        foo: worker
+        beta.kubernetes.io/arch: amd64
 ```
 
 It is possible to set default topology spread constraints for a cluster. Default topology spread constraints are applied to a Pod if, and only if:
@@ -119,9 +115,64 @@ After `kind-worker2` was evicted. the pods are still properly distributed
 
 ![image-20210112163150264](/Users/oy84dc/Documents/Typora Images/image-20210112163150264.png)
 
+
+
+### podAntiAffinity
+
+anti-affinity allow you to constrain which nodes your pod is eligible to be scheduled *based on labels on pods that are already running on the node* rather than based on labels on nodes
+
+```yaml
+metadata:
+  name: redis-cache
+spec:
+  selector:
+    matchLabels:
+      app: myapp
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - myapp				
+            topologyKey: "kubernetes.io/hostname"
+```
+
+```yaml
+    spec:
+      affinity:
+        podAntiAffinity: 
+          preferredDuringSchedulingIgnoredDuringExecution: 
+          - weight: 100  
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app 
+                  operator: In 
+                  values:
+                  - myapp
+              topologyKey: kubernetes.io/hostname
+```
+
+
+
+![image-20210119134313932](/Users/oy84dc/Documents/Typora Images/image-20210119134313932.png)
+
+![image-20210119134318977](/Users/oy84dc/Documents/Typora Images/image-20210119134318977.png)
+
+![image-20210119134341743](/Users/oy84dc/Documents/Typora Images/image-20210119134341743.png)
+
+
+
 ### PodDisruptionBudget
-
-
 
 PodDisruptionBudget - protects pods from being evicted by specifying minimum and maximum pods to be allowed running. PDB can be configure by 2 settings. `minAvailable` describe that PDB will prevent deletion of pods if the number of pods is equal to 
 
@@ -134,7 +185,7 @@ spec:
   minAvailable: 2
   selector:
     matchLabels:
-      app:  app1
+      app:  myapp
 ```
 
 ```yaml
@@ -147,42 +198,27 @@ spec:
   selector:
     matchLabels:
       app: app1
+      
+      
 ```
 
-### podAntiAffinity
 
-anti-affinity allow you to constrain which nodes your pod is eligible to be scheduled *based on labels on pods that are already running on the node* rather than based on labels on nodes
 
-```yaml
-metadata:
-  name: redis-cache
-spec:
-  selector:
-    matchLabels:
-      app: store
-  replicas: 3
-  template:
-    metadata:
-      labels:
-        app: store
-    spec:
-      affinity:
-        podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-          - labelSelector:
-              matchExpressions:
-              - key: app
-                operator: In
-                values:
-                - store
-            topologyKey: "kubernetes.io/hostname"
-```
+![image-20210119123525360](/Users/oy84dc/Documents/Typora Images/image-20210119123525360.png)
 
 
 
 ### RollingUpdateStrategy
 
 RollingUpdate - `maxSurge` describes how many pods will be roll out during update. `maxUnavailable` describe how many pods is needed to be running to continue the deployment. Reaching Unavailable pods will pause the rolling update then continue when enough pods is then running. 
+
+```yaml
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+```
 
 ```yaml
 kind: Pod
@@ -202,24 +238,40 @@ spec:
 The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization (or, with [custom metrics](https://git.k8s.io/community/contributors/design-proposals/instrumentation/custom-metrics-api.md) support, on some other application-provided metrics).
 
 ```yaml
-apiVersion: autoscaling/v2beta2
+apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: php-apache
+  name: kube-dashboard
 spec:
-  scaleTargetRef:
-    apiVersion: apps/v1
-    kind: Deployment
-    name: php-apache
-  minReplicas: 1
   maxReplicas: 10
-  metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      target:
-        type: Utilization
-        averageUtilization: 50
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: kube-dashboard
+  targetCPUUtilizationPercentage: 80
+```
+
+
+
+https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/#support-for-configurable-scaling-behavior
+
+Cooldown/delay is supported starting 1.18
+
+```
+behavior:
+  scaleDown:
+    stabilizationWindowSeconds: 60
+```
+
+```yaml
+behavior:
+  scaleDown:
+    policies:
+    - type: Pods
+      value: 2
+      periodSeconds: 60
+    selectPolicy: Min
 ```
 
 
@@ -236,5 +288,33 @@ metadata:
 value: 1000000
 globalDefault: false
 description: "This priority class should be used for XYZ service pods only."
+```
+
+
+
+
+
+# NetworkPolicy
+
+Pods become isolated by having a NetworkPolicy that selects them. Once there is any NetworkPolicy in a namespace selecting a particular pod, that pod will reject any connections that are not allowed by any NetworkPolicy. (Other pods in the namespace that are not selected by any NetworkPolicy will continue to accept all traffic.)
+
+```
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: access-kube-dashboard
+spec:
+  podSelector:
+    matchLabels:
+      app: kube-dashboard
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: "locust-master"
+  - from:
+    - podSelector:
+        matchLabels:
+          app: "locust-slave"
 ```
 
