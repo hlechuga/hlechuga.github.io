@@ -1,9 +1,9 @@
 # Setup
 title: HNL
 tagline: Cheat sheets and notes
-url: "https://hlechuga.github.com"
+url: "https://hlechuga.github.io"
 paginate: 1
-baseurl: "https://hlechuga.github.com"
+baseurl: "https://hlechuga.github.io"
 permalink: pretty
 
 # Gems
