@@ -3,7 +3,7 @@ title: HNL
 tagline: Cheat sheets and notes
 # url: "https://hlechuga.github.io"
 paginate: 1
-baseurl: "https://hlechuga.github.io"
+# baseurl: "https://hlechuga.github.io"
 permalink: pretty
 
 # Gems
