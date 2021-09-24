@@ -1,0 +1,15 @@
+
+
+
+panel:
+  lastmod: "Recent Update"
+  trending_tags: "Tags"
+  toc: "TOC"
+
+post:
+  relate_posts: "Further Reading"
+  button:
+    next: Newer
+    previous: Older
+
+search_hint: "Search here"   # text show on search bar
